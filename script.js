@@ -52,4 +52,4 @@ while (intentos > 0 && !adivinadas){
 if (!adivinadas) {
     console.log(" :(lo siento, el numero secreto era " + numeroSecreto);
 }
-/// permita que el usuario elija el rango de numeros
+/// permita que el usuario elija el rango de numeross
