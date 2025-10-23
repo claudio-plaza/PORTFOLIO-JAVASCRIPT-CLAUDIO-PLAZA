@@ -32,4 +32,24 @@ console.log("el resultado de la operacion " + operacion + " entre " + numero1 + 
 
 ////temas condicionales, operadores logicos y comparacion (==, <, >, <=, >=, !=)
 
-const numeroSecreto = Math.floor(Math.random() * 10) + 1;
+const numeroSecreto = Math.floor(Math.random() * 10) + 1; /// numero entre en 1 y 10 
+let intentos = 3;
+let adivinadas = false;
+
+while (intentos > 0 && !adivinadas){
+    let numero = parseInt(prompt(`Adivina el numero entre 1 al 10. intentos restantes:  ${intentos}`));
+
+    if (numero === numeroSecreto){
+        console.log("felicidades! Adivinaste el numero perro! ");
+        adivinadas = true;
+    } else if (numero > numeroSecreto){
+        console.log("el numero es menor que " +numero);
+    }else if (numero < numeroSecreto){
+        console.log("el numero es mayor que " + numero);
+    }
+    intentos--; 
+}
+if (!adivinadas) {
+    console.log(" :(lo siento, el numero secreto era " + numeroSecreto);
+}
+/// permita que el usuario elija el rango de numeros
