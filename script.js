@@ -1,4 +1,5 @@
 //calculadora simple
+/*
 let numero1 = parseFloat(prompt("ingrese el primer Numero"));
 let numero2 = parseFloat(prompt("ingrese el segundo numero"));
 let operacion = prompt("ingrese la operacion a realizar: +, -, *, /");
@@ -22,7 +23,7 @@ if (operacion === "+") {
 }
 
 //mostrar resultado en consola
-console.log("el resultado de la operacion " + operacion + " entre " + numero1 + " y " + numero2 + " es: " + resultado);
+console.log("el resultado de la operacion " + operacion + " entre " + numero1 + " y " + numero2 + " es: " + resultado);*/
 
 //// ejercicio adicional agrega validaciones para que el usuario ingrese solo numeros y operaciones validas
 
