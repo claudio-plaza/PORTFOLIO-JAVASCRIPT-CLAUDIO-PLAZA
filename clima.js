@@ -2,7 +2,7 @@ const apiKey = "a27cb8ecf6ce17664b7fa267aabb3310"; // 🔑 Regístrate en openwe
 
 document.getElementById("buscar").addEventListener("click", async () => {
   const ciudad = document.getElementById("ciudad").value.trim();
-  if (!ciudad) return alert("Ingrese una ciudad");
+  if (!ciudad) return alert("Ingrese una ciudad guachon");
 
   try {
     const res = await fetch(
@@ -25,3 +25,4 @@ document.getElementById("buscar").addEventListener("click", async () => {
     document.getElementById("resultado").innerHTML = "⚠️ Error al conectar con la API";
   }
 });
+///// api gatos live_d8s5r9pcgnX5z9TGbBfqZo42GSo2e0cI5WhGQLZqfyp6PPn6IxkW8Vdp3e184Aoq
