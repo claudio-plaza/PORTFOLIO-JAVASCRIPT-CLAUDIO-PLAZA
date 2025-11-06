@@ -62,56 +62,64 @@ if (!adivinadas) {
 
 
 ///ej 6 
+// 🗂️ AGENDA DE CONTACTOS BÁSICA
 
 let agenda = [];
-//funciona pára agendar contactos 
 
+// 📞 Función para agregar contactos
 function agregarContacto(nombre, telefono, email) {
-    const contacto = {
-        nombre,
-        telefono,
-        email
-    };
-    agenda.push(contacto);
-    console.log(`Contacto agregado: ${nombre}`);
+  const contacto = { nombre, telefono, email };
+  agenda.push(contacto);
+  console.log(`✅ Contacto agregado: ${nombre}`);
 }
 
-
-///funcnion para mostrar contactos 
-
-
-function mostrarAgenda(){
-    console.log("lista de contactos");
-    agenda.forEach(({nombre, telefono, email}, i) =>{
-        console.log(`${i +1}. ${nombre} - ${telefono} - ${email}`);
-    });
+// 📋 Función para mostrar todos los contactos
+function mostrarAgenda() {
+  console.log("📔 Lista de contactos:");
+  agenda.forEach(({ nombre, telefono, email }, i) => {
+    console.log(`${i + 1}. ${nombre} - 📞 ${telefono} - ✉️ ${email}`);
+  });
 }
 
-//// funcion para buscar contacto 
-
+// 🔍 Función para buscar contacto
 function buscarContacto(nombre) {
-    const contacto = agenda.find(
-        (c) => c.nombre.tolowerCase() === nombre.tolowerCase()
-    );
-    if (contacto) {
-        console.log(`encontrado : ${contacto.nombre} - ${contacto.telefono}`);
-    } else {
-        console.log("contacto no encontrado");
-    }
-};
-
-///funccion para esportar agenda a JSON
-
-function  exportarAgenda() {
-    const json = JSON.stringify(agenda, null, 2);
-    console.log("Agenda exportada en formato JSON:");
+  const contacto = agenda.find(
+    (c) => c.nombre.toLowerCase() === nombre.toLowerCase()
+  );
+  if (contacto) {
+    console.log(`🔎 Encontrado: ${contacto.nombre} - ${contacto.telefono}`);
+  } else {
+    console.log("❌ Contacto no encontrado");
+  }
 }
 
-// programa principal 
+// 🗑️ Función para eliminar contacto
+function eliminarContacto(nombre) {
+  const index = agenda.findIndex(
+    (c) => c.nombre.toLowerCase() === nombre.toLowerCase()
+  );
 
-agregarContacto("ana", "123456789", "ana@example.com");
-agregarContacto("juan", "987654321", "juan@example.com");
+  if (index !== -1) {
+    const eliminado = agenda.splice(index, 1)[0];
+    console.log(`🗑️ Contacto eliminado: ${eliminado.nombre}`);
+  } else {
+    console.log("⚠️ No se encontró el contacto para eliminar");
+  }
+}
+
+// 💾 Función para exportar agenda a JSON
+function exportarAgenda() {
+  const json = JSON.stringify(agenda, null, 2);
+  console.log("📤 Agenda en formato JSON:\n", json);
+}
+
+// 🧠 Programa principal (ejemplo)
+agregarContacto("Ana", "261-1234567", "ana@mail.com");
+agregarContacto("Luis", "261-7654321", "luis@mail.com");
 mostrarAgenda();
 
-buscarContacto("ana");
+buscarContacto("Ana");
+eliminarContacto("Ana");
+mostrarAgenda();
+
 exportarAgenda();
