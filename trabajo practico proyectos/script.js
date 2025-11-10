@@ -1,8 +1,18 @@
 //calculadora simple
 /*
-let numero1 = parseFloat(prompt("ingrese el primer Numero"));
-let numero2 = parseFloat(prompt("ingrese el segundo numero"));
-let operacion = prompt("ingrese la operacion a realizar: +, -, *, /");
+let numero1;
+while (isNaN(numero1)) {
+  numero1 = parseFloat(prompt("ingrese el primer Numero"));
+}
+let numero2;
+while (isNaN(numero2)) {
+  numero2 = parseFloat(prompt("ingrese el segundo numero"));
+}
+let operacion;
+while (!["+", "-", "*", "/"].includes(operacion)) {
+  operacion = prompt("ingrese la operacion a realizar: +, -, *, /");
+}
+
 ///estructura condicional
 let resultado;
 
@@ -25,45 +35,76 @@ if (operacion === "+") {
 //mostrar resultado en consola
 console.log("el resultado de la operacion " + operacion + " entre " + numero1 + " y " + numero2 + " es: " + resultado);*/
 
+
 //// ejercicio adicional agrega validaciones para que el usuario ingrese solo numeros y operaciones validas
 
-
+/*
 
 ///clase 2  Adivina el numero 
+//// Temas: condicionales, operadores lógicos y comparación (==, <, >, <=, >=, !=)
 
-////temas condicionales, operadores logicos y comparacion (==, <, >, <=, >=, !=) 
-/*alert("Bienvenido al juego de Adivina el numero! Tienes 3 intentos para adivinar el numero secreto entre 1 y 10.");
-const numeroSecreto = Math.floor(Math.random() * 10) + 1; /// numero entre en 1 y 10 
+alert("🎯 Bienvenido al juego de 'Adivina el número'! Tendrás 3 intentos para adivinar el número secreto.");
+
+// El usuario elige el rango
+let maximo = parseInt(prompt("Elige el número máximo del rango (por ejemplo, 10):"));
+
+// Validación del rango
+while (isNaN(maximo) || maximo < 1) {
+  maximo = parseInt(prompt("Por favor, ingresa un número válido mayor o igual a 1:"));
+}
+
+// Generar número secreto dentro del rango elegido
+const numeroSecreto = Math.floor(Math.random() * maximo) + 1;
 let intentos = 3;
 let adivinadas = false;
 
-while (intentos > 0 && !adivinadas){
-    let numero = parseInt(prompt(`Adivina el numero entre 1 al 10. intentos restantes:  ${intentos}`));
+while (intentos > 0 && !adivinadas) {
+  let numero = parseInt(prompt(`Adivina el número entre 1 y ${maximo}. Intentos restantes: ${intentos}`));
 
-    if (numero === numeroSecreto){
-        alert("felicidades! Adivinaste el numero perro! ");
-        adivinadas = true;
-    } else if (numero > numeroSecreto){
-        alert("el numero es menor que " +numero);
-    }else if (numero < numeroSecreto){
-        alert("el numero es mayor que " + numero);
-    }
-    intentos--; 
+  // Validar que el número ingresado esté dentro del rango
+  if (isNaN(numero) || numero < 1 || numero > maximo) {
+    alert(`⚠️ Ingresa un número válido entre 1 y ${maximo}.`);
+    continue; // vuelve al inicio del while sin restar intentos
+  }
+
+  if (numero === numeroSecreto) {
+    alert("🎉 ¡Felicidades! Adivinaste el número 😎");
+    adivinadas = true;
+  } else if (numero > numeroSecreto) {
+    alert("El número secreto es menor que " + numero);
+  } else {
+    alert("El número secreto es mayor que " + numero);
+  }
+
+  intentos--;
 }
+
 if (!adivinadas) {
-    alert(" :(lo siento, el numero secreto era " + numeroSecreto);
+  alert(`😢 Lo siento, el número secreto era ${numeroSecreto}.`);
 }*/
 
-/// permita que el usuario elija el rango
+
+////clase 3 generador de tablas de multiplicar
+
+let numero = parseInt(prompt("ingrese el numero para generar su tabla de multiplicar"));
+let limite = parseInt(prompt("ingrese hasta que numero quiere multiplicar"));
+
+let resultados = [];
+
+for (let i = 1; i <= limite; i++){
+    resultados.push(`${numero} * ${i} = ${numero * i}`);
+}
+
+console.log(resultados);
+
+for (let i = 0; i < resultados.length; i++) {
+    console.log(resultados[i]);
+} 
 
 
-
-
-
-
-///ej 6 
+///ej 6
 // 🗂️ AGENDA DE CONTACTOS BÁSICA
-
+/*
 let agenda = [];
 
 // 📞 Función para agregar contactos
@@ -123,3 +164,4 @@ eliminarContacto("Ana");
 mostrarAgenda();
 
 exportarAgenda();
+*/
