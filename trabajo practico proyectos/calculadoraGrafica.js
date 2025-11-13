@@ -13,6 +13,10 @@ botones.forEach((boton) => {
       }
     } else {
       pantalla.value += valor;
+    } if (valor === "C") {
+      pantalla.value = "";
     }
   });
 });
+
+//Desafío: agrega un botón "C" para borrar la pantalla.

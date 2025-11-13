@@ -85,6 +85,7 @@ if (!adivinadas) {
 
 
 ////clase 3 generador de tablas de multiplicar
+/*
 
 let numero = parseInt(prompt("ingrese el numero para generar su tabla de multiplicar"));
 let limite = parseInt(prompt("ingrese hasta que numero quiere multiplicar"));
@@ -99,7 +100,132 @@ console.log(resultados);
 
 for (let i = 0; i < resultados.length; i++) {
     console.log(resultados[i]);
-} 
+}    */
+
+///clase 4
+/*
+function celsiusAFahrenheit(celsius) {
+    return (celsius * 9) / 5 + 32;
+}
+// Convierte grados Fahrenheit a Celsius
+// Fórmula: °C = (°F - 32) × 5/9
+const fahrenheitACelsius = (fahrenheit) => ((fahrenheit - 32) * 5) / 9;
+
+// Fórmula: K = °C + 273.15
+const celsiusAKelvin = (celsius) => celsius + 273.15;
+
+const kelvinACelsius = (kelvin) => kelvin - 273.15;
+
+let opcion = prompt("Elige una opción:\n1. °C → °F\n2. °F → °C\n3. °C → K\n4. K → °C");
+
+if (opcion === "1") {
+    // Pide al usuario que ingrese la temperatura en Celsius
+    let celsius = parseFloat(prompt("Ingrese la temperatura en °C:"));
+    
+    // Realiza la conversión y muestra el resultado
+    console.log(`${celsius}°C = ${celsiusAFahrenheit(celsius).toFixed(2)}°F`);
+
+// ==========================================
+// OPCIÓN 2: Fahrenheit a Celsius
+// ==========================================
+} else if (opcion === "2") {
+    // Pide al usuario que ingrese la temperatura en Fahrenheit
+    let fahrenheit = parseFloat(prompt("Ingrese la temperatura en °F:"));
+    
+    console.log(`${fahrenheit}°F = ${fahrenheitACelsius(fahrenheit).toFixed(2)}°C`);
+
+} else if (opcion === "3") {
+    let celsius = parseFloat(prompt("Ingrese la temperatura en °C:"));
+    
+    console.log(`${celsius}°C = ${celsiusAKelvin(celsius).toFixed(2)}K`);
+
+} else if (opcion === "4") {
+    let kelvin = parseFloat(prompt("Ingrese la temperatura en K:"));
+    
+    console.log(`${kelvin}K = ${kelvinACelsius(kelvin).toFixed(2)}°C`);
+
+} else {
+    // Muestra un mensaje de error si la opción no es válida
+    console.log("Opción no válida ❌");
+}
+*/
+// ==========================================
+// NOTAS IMPORTANTES:
+// ==========================================
+// • parseFloat() convierte el texto ingresado en número decimal
+// • toFixed(2) redondea el resultado a 2 decimales
+// • Kelvin nunca puede ser negativo (el cero absoluto es 0K = -273.15°C)
+
+
+
+
+
+////eje 5 
+
+// 🛒 LISTA DE COMPRAS CON TOTALES
+
+let listaCompras = [
+    { nombre: "Leche", precio: 1200, cantidad: 2 },
+    { nombre: "Pan", precio: 800, cantidad: 1 },
+    { nombre: "Huevos", precio: 2500, cantidad: 1 },
+    { nombre: "Café", precio: 3200, cantidad: 1 }
+];
+
+// Mostrar lista con forEach
+console.log("📋 Lista de compras:");
+listaCompras.forEach((item) => {
+    console.log(`- ${item.nombre} (x${item.cantidad}) $${item.precio}`);
+});
+
+// Calcular el total usando reduce
+const total = listaCompras.reduce(
+    (acum, item) => acum + item.precio * item.cantidad,
+    0
+);
+console.log(`💰 Total a pagar: $${total}`);
+
+// Filtrar productos caros
+const productosCaors = listaCompras.filter((item) => item.precio > 1000);
+console.log("💵 Productos con precio mayor a $1000:", productosCaors);
+
+// Buscar un producto
+const buscar = prompt("Ingrese el nombre del producto que desea buscar:");
+const encontrado = listaCompras.find(
+    (item) => item.nombre.toLowerCase() === buscar.toLowerCase()
+);
+if (encontrado) {
+    console.log(
+        `🔍 Encontrado: ${encontrado.nombre} cuesta $${encontrado.precio}`
+    );
+} else {
+    console.log("❌ Producto no encontrado");
+}
+
+// ==========================================
+// DESAFÍO: AGREGAR Y ELIMINAR PRODUCTOS
+// ==========================================
+
+// AGREGAR un producto usando push()
+console.log("\n➕ Agregando producto nuevo...");
+listaCompras.push({ nombre: "Azúcar", precio: 1500, cantidad: 2 });
+console.log("✅ Producto agregado. Nueva lista:");
+listaCompras.forEach((item) => {
+    console.log(`- ${item.nombre} (x${item.cantidad}) $${item.precio}`);
+});
+
+// ELIMINAR un producto usando splice()
+// splice(índice, cantidad_a_eliminar)
+console.log("\n➖ Eliminando el primer producto...");
+listaCompras.splice(0, 1); // Elimina 1 elemento desde el índice 0
+console.log("✅ Producto eliminado. Nueva lista:");
+listaCompras.forEach((item) => {
+    console.log(`- ${item.nombre} (x${item.cantidad}) $${item.precio}`);
+});
+
+
+
+
+
 
 
 ///ej 6
