@@ -14,3 +14,8 @@ setInterval(actualizarReloj, 1000);
 
 // Llama a la función inmediatamente al cargar la página
 actualizarReloj();
+function cambiarColor() {
+  const elemento = document.getElementById("reloj");
+  elemento.style.color = "red"; // Cambia el texto a rojo
+}
+

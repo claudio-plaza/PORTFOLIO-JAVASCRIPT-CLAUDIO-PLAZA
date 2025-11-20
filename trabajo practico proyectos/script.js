@@ -163,6 +163,7 @@ if (opcion === "1") {
 ////eje 5 
 
 // 🛒 LISTA DE COMPRAS CON TOTALES
+/*  
 
 let listaCompras = [
     { nombre: "Leche", precio: 1200, cantidad: 2 },
@@ -222,7 +223,7 @@ listaCompras.forEach((item) => {
     console.log(`- ${item.nombre} (x${item.cantidad}) $${item.precio}`);
 });
 
-
+*/
 
 
 

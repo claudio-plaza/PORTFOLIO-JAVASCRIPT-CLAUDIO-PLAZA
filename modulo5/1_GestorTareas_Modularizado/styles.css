@@ -41,6 +41,6 @@ button:hover{transform:translateY(-1px)}
 }
 .task-item.done{opacity:0.6;text-decoration:line-through}
 .task-actions{display:flex;gap:8px}
-.btn-ghost{background:transparent;border:1px dashed rgba(15,23,42,0.06);padding:8px;border-radius:8px;cursor:pointer}
+.btn-ghost{background:black;border:1px dashed rgb(25, 80, 208);padding:8px;border-radius:8px;cursor:pointer}
 .footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px;color:var(--muted);font-size:0.85rem}
 small{opacity:0.8}
