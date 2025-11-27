@@ -1,5 +1,5 @@
 //calculadora simple
-/*
+
 let numero1;
 while (isNaN(numero1)) {
   numero1 = parseFloat(prompt("ingrese el primer Numero"));
@@ -33,12 +33,11 @@ if (operacion === "+") {
 }
 
 //mostrar resultado en consola
-console.log("el resultado de la operacion " + operacion + " entre " + numero1 + " y " + numero2 + " es: " + resultado);*/
+console.log("el resultado de la operacion " + operacion + " entre " + numero1 + " y " + numero2 + " es: " + resultado);
 
 
 //// ejercicio adicional agrega validaciones para que el usuario ingrese solo numeros y operaciones validas
 
-/*
 
 ///clase 2  Adivina el numero 
 //// Temas: condicionales, operadores lógicos y comparación (==, <, >, <=, >=, !=)
@@ -81,11 +80,11 @@ while (intentos > 0 && !adivinadas) {
 
 if (!adivinadas) {
   alert(`😢 Lo siento, el número secreto era ${numeroSecreto}.`);
-}*/
+}
 
 
 ////clase 3 generador de tablas de multiplicar
-/*
+
 
 let numero = parseInt(prompt("ingrese el numero para generar su tabla de multiplicar"));
 let limite = parseInt(prompt("ingrese hasta que numero quiere multiplicar"));
@@ -100,10 +99,10 @@ console.log(resultados);
 
 for (let i = 0; i < resultados.length; i++) {
     console.log(resultados[i]);
-}    */
+}    
 
 ///clase 4
-/*
+
 function celsiusAFahrenheit(celsius) {
     return (celsius * 9) / 5 + 32;
 }
@@ -148,7 +147,7 @@ if (opcion === "1") {
     // Muestra un mensaje de error si la opción no es válida
     console.log("Opción no válida ❌");
 }
-*/
+
 // ==========================================
 // NOTAS IMPORTANTES:
 // ==========================================
@@ -163,7 +162,7 @@ if (opcion === "1") {
 ////eje 5 
 
 // 🛒 LISTA DE COMPRAS CON TOTALES
-/*  
+
 
 let listaCompras = [
     { nombre: "Leche", precio: 1200, cantidad: 2 },
@@ -223,7 +222,7 @@ listaCompras.forEach((item) => {
     console.log(`- ${item.nombre} (x${item.cantidad}) $${item.precio}`);
 });
 
-*/
+
 
 
 
@@ -231,7 +230,7 @@ listaCompras.forEach((item) => {
 
 ///ej 6
 // 🗂️ AGENDA DE CONTACTOS BÁSICA
-/*
+
 let agenda = [];
 
 // 📞 Función para agregar contactos
@@ -291,4 +290,3 @@ eliminarContacto("Ana");
 mostrarAgenda();
 
 exportarAgenda();
-*/
