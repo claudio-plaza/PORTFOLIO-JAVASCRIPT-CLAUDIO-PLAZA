@@ -19,9 +19,15 @@ const TablaMultiplicar = {
             return;
         }
 
-        let texto = "TABLA DEL " + numero + "\n\n";
+        // Generar resultados en un array y mostrarlos con for...of
+        const resultados = [];
         for (let i = 1; i <= limite; i++) {
-            texto += numero + " x " + i + " = " + (numero * i) + "\n";
+            resultados.push(`${numero} x ${i} = ${numero * i}`);
+        }
+
+        let texto = `TABLA DEL ${numero}\n\n`;
+        for (const linea of resultados) {
+            texto += linea + "\n";
         }
 
         mostrarResultado('output3', texto);

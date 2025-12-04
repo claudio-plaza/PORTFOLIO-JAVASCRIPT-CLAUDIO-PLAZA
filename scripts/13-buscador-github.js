@@ -61,6 +61,37 @@
         linkEl.style.display = data.html_url ? '' : 'none';
       }
 
+      // Obtener últimos repos del usuario (los 5 más recientes por actualización)
+      try {
+        const reposRes = await fetch(`https://api.github.com/users/${encodeURIComponent(user)}/repos?sort=updated&per_page=5`);
+        if (reposRes.ok) {
+          const reposData = await reposRes.json();
+          const repoList = document.getElementById('github-repo-list');
+          if (repoList) {
+            repoList.innerHTML = '';
+            reposData.forEach(r => {
+              const li = document.createElement('li');
+              li.style.cssText = 'background:#fff;margin:6px 0;padding:8px;border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,0.06);';
+              const a = document.createElement('a');
+              a.href = r.html_url;
+              a.target = '_blank';
+              a.rel = 'noreferrer';
+              a.textContent = r.name;
+              a.style.cssText = 'font-weight:600;color:#2c3e50;text-decoration:none;';
+              const span = document.createElement('div');
+              span.style.cssText = 'font-size:0.9em;color:#666;margin-top:4px;';
+              const updated = new Date(r.updated_at).toLocaleString();
+              span.textContent = `${r.stargazers_count ? '⭐ ' + r.stargazers_count + ' · ' : ''}Última actualización: ${updated}`;
+              li.appendChild(a);
+              li.appendChild(span);
+              repoList.appendChild(li);
+            });
+          }
+        }
+      } catch (e) {
+        console.warn('No se pudieron cargar repos:', e);
+      }
+
       if (resultado) resultado.style.display = '';
       if (output13) {
         output13.innerHTML = '';

@@ -1,16 +1,22 @@
 // MÓDULO 2: ADIVINA EL NÚMERO
 const AdivinaNumero = {
     ejecutar: function() {
+        // Permitir al usuario elegir un rango (min y max)
+        let min = prompt("¿Desde qué número quieres jugar? (ej: 1)");
+        if (min === null) return;
+        min = parseInt(min);
+
         let max = prompt("¿Hasta qué número quieres jugar? (ej: 100)");
         if (max === null) return;
         max = parseInt(max);
 
-        if (isNaN(max) || max < 1) {
-            mostrarResultado('output2', 'ERROR: Ingresa un número válido');
+        if (isNaN(min) || isNaN(max) || min >= max) {
+            mostrarResultado('output2', 'ERROR: Ingresa un rango válido (min < max)');
             return;
         }
 
-        let numero = Math.floor(Math.random() * max) + 1;
+        // generar número aleatorio entre min y max (inclusive)
+        let numero = Math.floor(Math.random() * (max - min + 1)) + min;
         let intentos = 3;
         let texto = "";
 

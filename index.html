@@ -95,9 +95,8 @@
                     <button onclick="agregarDigito('0')" style="padding: 15px; cursor: pointer; background: #444; color: #fff; border: none; border-radius: 5px;">0</button>
                     <button onclick="agregarDigito('.')" style="padding: 15px; cursor: pointer; background: #444; color: #fff; border: none; border-radius: 5px;">.</button>
                     <button onclick="calcular()" style="padding: 15px; cursor: pointer; background: #4caf50; color: #fff; border: none; border-radius: 5px; grid-column: span 2;">=</button>
-                    <button onclick="agregarDigito('+')" style="padding: 15px; cursor: pointer; background: #ff9500; color: #fff; border: none; border-radius: 5px;">+</button>
+                    <button onclick="limpiarCalculadora()" style="padding: 15px; cursor: pointer; background: #e74c3c; color: #fff; border: none; border-radius: 5px; font-weight: bold;">C</button>
                 </div>
-                <button onclick="limpiarCalculadora()" style="width: 100%; padding: 10px; margin-top: 10px; background: #e74c3c; color: white; border: none; border-radius: 5px; cursor: pointer;">Limpiar</button>
             </div>
             <button id="btnCalc" onclick="ejercicio8()" style="width: 100%; padding: 12px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Abrir Calculadora</button>
         </div>
@@ -174,6 +173,7 @@
                 <p id="github-location"></p>
                 <p id="github-email"></p>
                 <a id="github-link" href="#" target="_blank" rel="noreferrer">Ver perfil en GitHub</a>
+                <ul id="github-repo-list" style="list-style:none;padding:0;margin-top:10px;"></ul>
             </div>
             <div id="output13" class="output"></div>
         </div>
