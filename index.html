@@ -145,13 +145,18 @@
         <div class="exercise">
             <h2>Ejercicio 12: Buscador de Clima</h2>
             <p>Busca el clima de cualquier ciudad en tiempo real</p>
-            <div style="display: flex; gap: 10px; margin-top: 15px;">
-                <input type="text" id="ciudad" placeholder="Ingresa una ciudad..." style="flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
-                <button id="buscar" style="padding: 10px 20px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Buscar</button>
+            <div style="display:flex; gap:10px; margin-top:15px;">
+                <input type="text" id="ciudad" placeholder="Ingresa ciudad..." style="flex:1; padding:10px; border:1px solid #ddd; border-radius:5px;">
+                <button id="buscar" style="padding:10px 20px; background:#3498db; color:white; border:none; border-radius:5px; cursor:pointer; font-weight:bold;">Buscar</button>
             </div>
-            <div id="resultado-clima" style="margin-top: 15px; text-align: center; color: #2c3e50;"></div>
+            <div id="resultado-clima" style="margin-top:12px; display:none;">
+                <h2 id="clima-ciudad"></h2>
+                <p id="clima-temp"></p>
+                <p id="clima-viento"></p>
+                <p id="clima-desc"></p>
+                <p id="clima-humedad"></p>
+            </div>
             <div id="output12" class="output"></div>
-        </div>
 
         <!-- Ejercicio 13: Buscador GitHub -->
         <div class="exercise">
@@ -161,7 +166,15 @@
                 <input type="text" id="usuario" placeholder="Ingresa usuario GitHub..." style="flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
                 <button id="buscar-github" style="padding: 10px 20px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Buscar</button>
             </div>
-            <div id="resultado-github" style="margin-top: 15px; text-align: center; color: #2c3e50;"></div>
+            <div id="resultado-github" style="margin-top: 15px; text-align: center; color: #2c3e50; display:none;">
+                <img id="github-avatar" alt="avatar" style="width:120px;height:120px;border-radius:50%;border:3px solid #3498db;display:block;margin:0 auto 12px;">
+                <h3 id="github-login"></h3>
+                <p id="github-followers"></p>
+                <p id="github-repos"></p>
+                <p id="github-location"></p>
+                <p id="github-email"></p>
+                <a id="github-link" href="#" target="_blank" rel="noreferrer">Ver perfil en GitHub</a>
+            </div>
             <div id="output13" class="output"></div>
         </div>
 
@@ -242,7 +255,7 @@
     <script src="scripts/09-lista-tareas.js"></script>
     <script src="scripts/10-formulario-registro.js"></script>
     <script src="scripts/11-cronometro.js"></script>
-    <script src="scripts/12-clima.js"></script>
+    <script src="scripts/12-api.js"></script>
     <script src="scripts/13-buscador-github.js"></script>
     <script src="scripts/14-notas.js"></script>
     <script src="scripts/15-graficos.js"></script>

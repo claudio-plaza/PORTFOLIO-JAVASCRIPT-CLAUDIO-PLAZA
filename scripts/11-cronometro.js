@@ -1,51 +1,56 @@
-// MÓDULO 11: CRONÓMETRO EN PANTALLA
-const Cronometro = {
-    segundos: 0,
-    intervalo: null,
-    
-    iniciar: function() {
-        if (!this.intervalo) {
-            this.intervalo = setInterval(() => {
-                this.segundos++;
-                this.actualizar();
-            }, 1000);
-        }
-    },
-    
-    pausar: function() {
-        clearInterval(this.intervalo);
-        this.intervalo = null;
-    },
-    
-    reiniciar: function() {
-        this.segundos = 0;
-        this.actualizar();
-        clearInterval(this.intervalo);
-        this.intervalo = null;
-    },
-    
-    actualizar: function() {
-        const hrs = String(Math.floor(this.segundos / 3600)).padStart(2, "0");
-        const mins = String(Math.floor((this.segundos % 3600) / 60)).padStart(2, "0");
-        const secs = String(this.segundos % 60).padStart(2, "0");
-        
-        const display = document.getElementById("cronometroDisplay");
-        if (display) {
-            display.textContent = `${hrs}:${mins}:${secs}`;
-        }
-    }
-};
+// Cronómetro — usa el id `cronometroDisplay` presente en Index.html
+(function(){
+  const display = document.getElementById('cronometroDisplay');
+  const btnIniciar = document.getElementById('iniciar');
+  const btnPausar = document.getElementById('pausar');
+  const btnReiniciar = document.getElementById('reiniciar');
 
-function ejercicio11() {
-    mostrarResultado('output11', 'Cronómetro listo. Usa los botones para controlar.');
-}
+  let segundos = 0;
+  let intervalo = null;
 
-document.addEventListener('DOMContentLoaded', function() {
-    const btnIniciar = document.getElementById('iniciar');
-    const btnPausar = document.getElementById('pausar');
-    const btnReiniciar = document.getElementById('reiniciar');
-    
-    if (btnIniciar) btnIniciar.addEventListener('click', () => Cronometro.iniciar());
-    if (btnPausar) btnPausar.addEventListener('click', () => Cronometro.pausar());
-    if (btnReiniciar) btnReiniciar.addEventListener('click', () => Cronometro.reiniciar());
-});
+  function formatTime(s) {
+    const hrs = String(Math.floor(s / 3600)).padStart(2, '0');
+    const mins = String(Math.floor((s % 3600) / 60)).padStart(2, '0');
+    const secs = String(s % 60).padStart(2, '0');
+    return `${hrs}:${mins}:${secs}`;
+  }
+
+  function actualizarCronometro() {
+    if (!display) return;
+    display.textContent = formatTime(segundos);
+  }
+
+  // mostrar estado inicial
+  if (display) display.textContent = formatTime(segundos);
+
+  if (btnIniciar) {
+    btnIniciar.addEventListener('click', () => {
+      if (!intervalo) {
+        intervalo = setInterval(() => {
+          segundos++;
+          actualizarCronometro();
+        }, 1000);
+      }
+    });
+  }
+
+  if (btnPausar) {
+    btnPausar.addEventListener('click', () => {
+      if (intervalo) {
+        clearInterval(intervalo);
+        intervalo = null;
+      }
+    });
+  }
+
+  if (btnReiniciar) {
+    btnReiniciar.addEventListener('click', () => {
+      segundos = 0;
+      actualizarCronometro();
+      if (intervalo) {
+        clearInterval(intervalo);
+        intervalo = null;
+      }
+    });
+  }
+})();

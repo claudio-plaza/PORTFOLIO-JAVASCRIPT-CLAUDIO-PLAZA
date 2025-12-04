@@ -1,10 +1,9 @@
         body {
-            background-color: #f0f0f0;
+            background-color: #0f0e0e;
             font-family: Arial, sans-serif;
             padding: 20px;
             margin: 0;
         }
-
         .header {
             background-color: #2c3e50;
             color: white;
@@ -238,4 +237,29 @@
         .stat .valor {
             font-size: 1.8em;
             font-weight: bold;
+        }
+
+        /* Mejoras específicas para el ejercicio de Clima */
+        #resultado-clima {
+            display: block;
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            padding: 12px 16px;
+            border-left: 4px solid #3498db;
+            border-radius: 6px;
+            margin-top: 12px;
+            text-align: center;
+            max-width: 100%;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+        }
+
+        /* Asegurar que el output estándar pueda mostrarse si el script lo usa */
+        #output12.output {
+            display: block;
+            background-color: #ecf0f1;
+            border-left: 4px solid #3498db;
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin-top: 12px;
+            color: #2c3e50;
         }
