@@ -25,20 +25,12 @@ Proyectos incluidos (resumen):
 Cómo probarlo localmente (sencillo):
 
 1. Abre una terminal en la carpeta del proyecto.
-2. Arranca un servidor simple (recomendado para evitar problemas con `file://`):
-
-```powershell
+2. Arranca un servidor simple 
 cd "c:\Users\Gaton\Documents\web\casa del futuro\PORTFOLIO-JAVASCRIPT-CLAUDIO-PLAZA"
 python -m http.server 8000
 ```
 
 3. Abre en el navegador: `http://localhost:8000/` y prueba los ejercicios.
-
-Notas y cosas a mejorar (opcional):
-
-- Algunos ejercicios usan APIs externas — puede que necesites revisar las keys o el estado del servicio.
-- Hay archivos en `scripts/` numerados por ejercicio. Puedes separar cada ejercicio en su propia página en `html/` si quieres.
-- Este proyecto está montado para aprender y mostrar ejemplos; si quieres que lo deje más profesional o que haga deploy en GitHub Pages, dímelo y lo hago.
-
-Contacto: Claudio Plaza (este README es sólo informativo y sencillo).
+ o con el deploy 
+ https://claudio-plaza.github.io/PORTFOLIO-JAVASCRIPT-CLAUDIO-PLAZA/
 
